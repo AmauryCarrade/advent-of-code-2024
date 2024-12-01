@@ -25,9 +25,6 @@ object Y2024D01 : Solution {
         }
 
     override fun partTwo(input: String): Int = parse(input).run {
-        first.stream()
-            .map { l -> l * second.count { v -> v == l } }
-            .reduce { a, b -> a + b }
-            .get()
+        first.sumOf { it * second.count { b -> b == it } }
     }
 }

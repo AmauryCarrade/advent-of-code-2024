@@ -8,7 +8,7 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(17)
 }
 
 sourceSets {
@@ -30,6 +30,8 @@ dependencies {
     val kotestVersion = "5.9.1"
 
     implementation("io.github.jadarma.aockt:aockt-core:$aocktVersion")
+    implementation("org.springframework.data:spring-data-commons:3.4.0")
+
     testImplementation("io.github.jadarma.aockt:aockt-test:$aocktVersion")
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
 }

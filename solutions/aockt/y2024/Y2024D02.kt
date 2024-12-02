@@ -16,6 +16,6 @@ object Y2024D02 : Solution {
     override fun partOne(input: String): Int = parse(input).count { isSafe(it) }
 
     override fun partTwo(input: String): Int = parse(input).count {
-        report -> isSafe(report) || report.indices.map { i -> isSafe(report.filterIndexed { index, _ -> index != i }) }.reduce { a, b -> a or b }
+        report -> isSafe(report) || report.indices.map { i -> isSafe(report.filterIndexed { index, _ -> index != i }) }.any { it }
     }
 }
